@@ -25,8 +25,8 @@ jobs:
             cd /var/www
 
             # Clone repo if it doesn't exist
-            if [ ! -d "ec2-crud-one-laravel" ]; then
-              git clone https://github.com/ekrambd/ec2-crud-one-laravel.git
+            if [ ! -d "api_ec2.git" ]; then
+              git clone https://github.com/ekrambd/api_ec2.git
             fi
 
             cd api_ec2
