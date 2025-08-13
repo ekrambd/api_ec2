@@ -43,5 +43,6 @@ jobs:
             php artisan migrate
             chmod -R ugo+rw storage/logs
             chmod -R ugo+rw storage/framework/
-            chmod -R 775 storage bootstrap/cache
+            sudo chown -R www-data:www-data storage bootstrap/cache
+            sudo chmod -R 775 storage bootstrap/cache
           EOF
