@@ -36,10 +36,12 @@ jobs:
             # Set up .env if missing
             if [ ! -f ".env" ]; then
               cp .env.example .env
+              composer install --no-dev --optimize-autoloader
+              php artisan key:generate
             fi
 
-            composer install --no-dev --optimize-autoloader
-            php artisan key:generate
-
+            php artisan migrate
+            chmod -R ugo+rw storage/logs
+            chmod -R ugo+rw storage/framework/
             chmod -R 775 storage bootstrap/cache
           EOF
