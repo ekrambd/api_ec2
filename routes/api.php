@@ -18,5 +18,5 @@ use App\Http\Controllers\CategoryController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+//categories
 Route::apiResource('categories', CategoryController::class);
